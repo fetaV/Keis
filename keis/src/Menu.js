@@ -46,6 +46,12 @@ export const Menu = () => {
             >
               Market
             </a>
+            <a
+              href="/market"
+              class="btn btn-outline-danger text-start px-3 border-0 rounded-3  mb-2"
+            >
+              Logout
+            </a>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useState, useEffect } from "react"
 import { FaCoins } from "react-icons/fa6"
+import axios from "axios"
 
 export const Profile = () => {
   const [gold, setGold] = useState(0)
@@ -13,6 +14,7 @@ export const Profile = () => {
   const [working, setWorking] = useState(false)
   const toplamGuc = acceleration + speed + grip + durability
   const [powerStatus, setPowerStatus] = useState("")
+  const [dataList, setDataList] = useState([])
 
   useEffect(() => {
     const hesaplaToplamGuc = () => acceleration + speed + grip + durability
@@ -30,6 +32,17 @@ export const Profile = () => {
       setPowerStatus("Coupe")
     }
   }, [toplamGuc])
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4001/register")
+      .then(response => {
+        setDataList(response.data)
+      })
+      .catch(error => {
+        console.error("API çağrısı sırasında hata oluştu: ", error)
+      })
+  }, [])
 
   const getImagePath = () => {
     const totalPower = acceleration + speed + grip + durability
