@@ -5,6 +5,7 @@ import { Signup } from "./Signup"
 import { Login } from "./Login"
 import { Table } from "./Table"
 import { ProfilePage } from "./ProfilePage"
+import TwoAndFourEveryDayCounter from "./Vakitler"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/table" element={<Table />}></Route>
           <Route path="/profilepage" element={<ProfilePage />}></Route>
+          <Route path="/vakitler" element={<TwoAndFourEveryDayCounter />}></Route>
         </Routes>
       </BrowserRouter>
 

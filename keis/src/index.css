@@ -1,0 +1,16 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 sütunlu bir grid */
+    gap: 5px; /* hücreler arası boşluk */
+  }
+  
+  .calendar-cell {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .calendar-date {
+    font-weight: bold;
+  }
+  
