@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import axios from "axios"
 
 function DateCalculator() {
   const [startDate, setStartDate] = useState("")
@@ -42,6 +43,27 @@ function DateCalculator() {
           yatsi: false,
         },
       })
+    }
+
+    let requestBody = {
+      startDate,
+      endDate,
+    }
+    try {
+      axios
+        .post("http://localhost:4001/dateRange", requestBody)
+        .then(res => {
+          console.log(res.data)
+        })
+        .catch(error => {
+          if (error.response && error.response.status === 400) {
+            return false
+          } else {
+            console.error("API çağrısı sırasında hata oluştu: ", error.message)
+          }
+        })
+    } catch (error) {
+      console.error("API çağrısı sırasında hata oluştu: ", error.message)
     }
 
     setCalendarData(dates)
