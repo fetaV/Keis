@@ -17,11 +17,11 @@ function DateCalculator() {
 
     const oneDay = 24 * 60 * 60 * 1000
     const diffDays = Math.round(Math.abs(start - end) / oneDay)
-    const multipliedSabahNamazi = diffDays * 2
-    const multipliedOgleNamazi = diffDays * 4
-    const multipliedIkindiNamazi = diffDays * 4
-    const multipliedAksamNamazi = diffDays * 3
-    const multipliedYatsiNamazi = diffDays * 4
+    const multipliedSabahNamazi = diffDays * 4
+    const multipliedOgleNamazi = diffDays * 8
+    const multipliedIkindiNamazi = diffDays * 8
+    const multipliedAksamNamazi = diffDays * 6
+    const multipliedYatsiNamazi = diffDays * 8
 
     setSabahNamazi(multipliedSabahNamazi)
     setOgleNamazi(multipliedOgleNamazi)
