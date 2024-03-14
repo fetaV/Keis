@@ -56,6 +56,28 @@ app.post("/ibadet-kaydet", async (req, res) => {
   }
 })
 
+app.get("/ibadet-bilgisi/:tarih", async (req, res) => {
+  try {
+    const tarih = req.params.tarih
+    const ibadetBilgisi = await Ibadet.findOne({ tarih })
+
+    if (!ibadetBilgisi) {
+      res
+        .status(404)
+        .json({ message: "Belirtilen tarihe ait ibadet bilgisi bulunamadı." })
+
+      return
+    }
+
+    res.json(ibadetBilgisi)
+  } catch (error) {
+    console.error("İbadet bilgisi alınırken bir hata oluştu:", error)
+    res
+      .status(500)
+      .json({ message: "İbadet bilgisi alınırken bir hata oluştu." })
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 })

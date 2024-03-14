@@ -7,6 +7,7 @@ import { Table } from "./Table"
 import { ProfilePage } from "./ProfilePage"
 import TwoAndFourEveryDayCounter from "./Vakitler"
 import Ibadet from "./Ibadet"
+import Ibadet2 from "./Ibadet2"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             element={<TwoAndFourEveryDayCounter />}
           ></Route>
           <Route path="/ibadet" element={<Ibadet />}></Route>
+          <Route path="/ibadet2" element={<Ibadet2 />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
